@@ -1,0 +1,7 @@
+Instalado o pluggin Code Runner
+	Permite testar código javaScrip diretamente no VSCode
+	 CTRL + ALT + N
+	 
+é o mesmo que rodar com o Node
+	Node font.js
+	

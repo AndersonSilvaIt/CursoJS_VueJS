@@ -1,0 +1,5 @@
+Para verificar a versão do Node na máquina
+	Node --version
+	
+Verificar a versão do NPM (gerenciador de pacotes do NodeJS)
+	npm -- version 
