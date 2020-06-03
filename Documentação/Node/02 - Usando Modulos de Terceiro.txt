@@ -1,0 +1,32 @@
+npm - é o gerenciados de pacotes do Node
+Node Package Manager
+
+
+/*Caminho utilizado até o momento*/
+
+C:\Users\Prodwin\Desktop\CursoJS\CursoJS_VueJS\exercicios-js
+
+no terminal direto dessa pasta // a raiz do projeto, rodar o comando para instalar as bibliotecas
+
+npm i lodash
+
+nessa mesma pasta será criado automaticamente a pasta node_modules
+onde terá o arquivo lodash.js
+
+Quando enviar os = não é necessário enviar essa pasta, pois contém muitos arquivos,
+para isso, nesse mesmo caminho, é criado o arquivo .gitignore
+dentro do arquivo basta inserir o node_modules (pasta que será ignorada quando enviar para o git)
+
+Para importar arquivo, não é necessário coloar o caminho relativo, basta usar o require('lodash'),
+o node irá procurar no nodule_module, a pasta lodash que contém o arquivo index.js (que realiza a exportação desta biblioteca)
+
+Instalado outra biblioteca de forma global
+instalado também na raiz exercicios-js
+
+// não é adicionado na pasta node_modules
+npm i -g nodemom
+
+nodemon -> verifica se teve alguma alteração no arquivo, caso positivo ele recompila o arquivo automaticamente
+
+cd node
+nodemon usandoModulosTerceiro.js

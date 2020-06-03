@@ -1,0 +1,20 @@
+O projeto em node é feito através de módulos
+
+Um arquivo significa um módulo
+Tudo o que é feito no módulo, é visível somente dentro desse arquivo
+para ser visto em outros lugares, é necessário exportar esse módulo
+
+para exportar um arquivo => exports.nomeObjeto = onbjeto
+exports.nomeObjeto = 'Olá Node'
+
+Forma mais clássica de exportação
+
+module.exports.nomeObjeto
+
+Padrão utilizado no Node CommonJS
+
+
+No exemplo
+moduloA.js e moduloB.js => são arquivos que serão exportados para moduloCliente.js
+
+Para realizar a importação de um módulo => const moduloA = require('caminho do arquivo') -- require('./moduloA')
