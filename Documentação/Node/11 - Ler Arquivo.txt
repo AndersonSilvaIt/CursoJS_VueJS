@@ -1,0 +1,31 @@
+Módulo resposável para leitura e escrita de dados
+FileSystem  fs
+
+criado o o "arquivo.json"
+
+arquivo criado para testes
+arquivoLeitura.js
+
+const fs = require('fs')
+
+o __dirname
+
+
+const conteudo = fs.readFileSync(caminho, 'utf-8')
+Leitura de forma sincrona, aguarda toda a leitura para devolver o arquivo
+
+no vsCode na parte inferior é possível verificar qual encode está usando, no caso atual é o utf-8
+
+para ler um arquivo .json, não é preciso usar o fs, basta usar 
+
+const config = require('./arquivo.json')
+é necessário colocar a extensão neste caso
+
+
+para leitura de pasta
+
+fs.readdir(__dirname, (err, conteudo) => {
+    console.log('Conteudo da pasta')
+    console.log(conteudo)
+})
+

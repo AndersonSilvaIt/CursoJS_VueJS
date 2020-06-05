@@ -1,0 +1,16 @@
+Caminho do arquivo do módulo  ../../moduloA_01
+
+../../moduloa_01 => caso colocar o nome com letra diferente, no linux não funciona
+podendo dar problema se for instalar em servidor Linux
+
+dentro do node, também possui módulos internos instalados
+ex: http => const http = require('http')
+
+
+const http = require('http')
+http.createServer((req, res) => {
+    res.write('Bom dia!')
+    res.end()
+}).listen(8080)
+
+ao abrir no browse localhost:8080, será apresentado o "Bom dia"

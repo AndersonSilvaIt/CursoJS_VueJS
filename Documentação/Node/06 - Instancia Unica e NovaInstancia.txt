@@ -1,0 +1,32 @@
+Em node, ao exportar um objeto,
+ao realizar o import, todo mundo tem acesso a mesma instância
+ex:
+
+criado um arquivo instanciaUnica.js
+
+module.exports = {
+    valor: 1,
+    inc(){
+        this.valor++
+    }
+}
+
+em outro arquivo, 
+ao realizar o import e criar mais de um objeto com esse arquivo
+ex:
+
+criado um arquivo, instanciaCliente.js
+
+const contadorA = require('./instanciaUnica')
+const contadorB = require('./instanciaUnica')
+
+fois objetos sendo importados do mesmo arquivo, 
+ambos tem acesso às mesmas variáveis e valores
+
+contadorA.inc()
+será incrementado 1 na variável valor
+
+caso for imprimir essa variavel do objetoB, ele terá o mesmo valor, ou seja 2
+
+contadorA.valor foi incrementado, contadorA.valor = 2 e contadorB.valor = 2 também
+

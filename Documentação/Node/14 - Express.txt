@@ -1,0 +1,12 @@
+criado projeto para testar a API com express
+
+dentro da pasta node/projeto
+npm init -y (para criar um arquivo package.json)
+
+instalado o express
+npm i --save express@4.16.2 -E
+
+par autillizar o express, é necessário importar, e criar um objeto para ele
+
+const express = require('express')
+const app = express()

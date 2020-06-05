@@ -1,0 +1,32 @@
+No node como geralmente a pasta  node_modules não sobe para o git, então é necessario instalar as dependências de bibliiotecas
+que ficam registradas no package.json
+
+
+para recriar a pasta nodule_modules
+
+basta rodar o "npm i", ele irá ler o arquivo package.json e instalar as dependências
+
+no package.json, é possível criar scrips que queira rodar com algum comando
+ex:
+
+{
+  "name": "funcionarios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "funcionarios.js",
+  "scripts": {
+    "start": "nodemon",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
+
+
+o script "start", ao rodar esse comando, o nodemon será iniciado
+ex: npm start

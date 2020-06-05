@@ -1,0 +1,21 @@
+global
+
+é visto em todos os arquivos do node
+ex:
+
+global.oi  = 'Olá
+essa variável será vista em todos os arquivos
+
+é necessário importar essa arquivos
+
+require('./global')
+
+em outro arquivo 
+
+console.log(a)
+
+assim como consigo alterar o valor dessa variavel
+
+a = 'Teste'
+
+a não ser que utiliza o metodo freeze(), para bloquear alterar o valor dela

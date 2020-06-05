@@ -1,0 +1,58 @@
+Na pasta node, criado nova pasta "Funcionarios"
+
+ao rodar o comando npm init   será iniciado o wizard para configurar o arquivo package.json
+
+para criar automatico basta implementar o y no fim do comando
+npm init -y
+
+npm i --save 
+
+irá salvar no package.json a referência dessa biblioteca
+ex: npm i --save axios
+será implementado a referêncoa no package.json
+
+{
+  "name": "funcionarios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
+
+
+no nome da versão "^0.19.2"
+o ^no inicio, significa que ele vai poder ser atualizado 
+para a versão ^0.20.2
+			  ^0.21.2
+mas ele não pode ser atualizado para a versão 
+			  ^1.00.0
+
+no nome da versão "~0.19.2"  
+permite alterar somente a versão "fixed"
+						"~0.19.2"
+pode ser alterado para  "~0.19.3" "~0.19.4"
+
+e não pode atualizar para "~0.20.2"
+
+no nome da versão "0.19.2"  
+caso não existir nenhum acento, será permitido somente usar essa versão
+ou ao instalar basta utilizar o 
+npm i --save axios@0.17.1 -E
+instalar exatamente essa versão  
+
+arquivo json funcionarios
+http://files.cod3r.com.br/curso-js/funcionarios.json
+
+axios = client http, faz requisições de algo que está remoto, em outro servidor
+
+
+Desafio funcionários.js
+
