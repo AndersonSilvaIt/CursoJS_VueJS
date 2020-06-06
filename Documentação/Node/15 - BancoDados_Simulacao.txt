@@ -1,0 +1,14 @@
+
+no teste de express, quando realizado o Post é gerado um erro no postman, isso pq os dados vindos da api não foram trasnformados em objeto
+
+utilizado o bodyparser
+npm i --save body-parser@1.18.2 -E
+
+app.use(bodyParser.urlencoded({ extended: true }))
+
+qualquer requisição que fizer utilizando o express, e no corpo da função vier como urlencodede,
+o bodyParser irá atuar
+por exemplo no Postman é flegado a opção
+Body
+x-www-form-urlencoded
+
