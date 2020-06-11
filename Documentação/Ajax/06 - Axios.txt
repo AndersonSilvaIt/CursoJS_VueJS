@@ -1,0 +1,4 @@
+o axios é uma biblioteca de terceiros, tem maior compatibilidade do que o fetch pelos browsers
+
+criado uma função get no serv para validar numeros pares e impares
+

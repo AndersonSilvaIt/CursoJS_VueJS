@@ -1,0 +1,9 @@
+Assyncrronous JavaScript And Xml
+
+técnica utilizada com javascript
+Atualiza a página ou parte dela sem fazer o reload
+comunica de forma assincrona com um servidor web, envia e recebe dados do servidor
+
+dentro da pasta do projeto ajax
+é iniciado o package.json
+npm init -y

@@ -1,0 +1,2 @@
+Não é todos os browser que suportam esse objeto, internet explorer mais antigo por exemplo
+

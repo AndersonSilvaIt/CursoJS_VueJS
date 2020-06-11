@@ -1,0 +1,42 @@
+<video  id="meuVideo">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        Seu browser não suporta a tag de vídeo.
+</video>
+
+assim como na tag picture, é possível informar vários arquivos na tag video
+
+para a aparecer os controles, basta informar a propriedade "controls" na tag video
+<video  id="meuVideo" controls>
+
+a propriedade "autoplay", ao entrar na página onde está o vídeo, ele irá começar a rodar automaticamente
+
+a propriedade "controlList="nodownload"" esconde o botão de download do vídeo
+
+<script>
+
+    configurarVideo('meuVideo')
+    
+    function configurarVideo(id){
+        const video = document.getElementById(id)
+        alert('passou01')
+     
+        // essa função bloqueia o usuário clicar com o botão direito do mouse e aparecer opções para download e etc
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)
+    }
+
+</script>
+
+para monitorar o vídeo, é possivel utilizar o currentTime (minuto, segundo atual),
+e video.duration, que é o tempo do vídeo, com isso foi criado uma barra de progresso,
+o mesmo o corre com os botões de pause e play

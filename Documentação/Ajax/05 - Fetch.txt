@@ -1,0 +1,3 @@
+é nativo do próprio browser, não precisa instalar biblioteca de terceiros com Jquery e Axios
+
+criado função no server.js, para tratar o post do formulário

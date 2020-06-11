@@ -1,0 +1,11 @@
+integrando o Front com o BackEnt
+
+criado o arquivo package.json dentro da pasta exercicios/form
+
+dependências de biblioteca
+
+express = npm i --save express@4.16.3 -E
+body-parser= npm i --save body-parser@1.18.2 -E
+
+
+necessário rodar os dois servidoes, o http-server, e o server.js

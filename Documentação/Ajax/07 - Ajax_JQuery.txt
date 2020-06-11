@@ -1,0 +1,36 @@
+No projeto single Page,
+SPA do Ajax
+
+os links será direcionados para a página atual, ou seja, o html será renderizado na página atual,
+porém as url irá mudar com o código feito
+
+na função 
+        function navegarViaAjax(url, seletor, push = true){
+            
+            if(!url || !seletor) return;
+
+            const elemento = document.querySelector(seletor)
+
+            fetch(url)
+                .then(resp => resp.text()) // aqui estou obtendo o HTML, e não os dados em JSON
+                .then(html => {
+                    elemento.innerHTML = html
+                    if(push){
+                        history.pushState({ seletor }, null, url)
+                    }
+                })
+        }
+		
+		foi utilizado o history.pushState({ seletor }, null, url), onde é passado a url, o push é utilizado para,
+quando clicar no link, será adicionado uma url no histórico do browser, para quando o usuário clicar em voltar,
+porém quando clicar em voltar, será reutilizado essa função navegar, porém com o push = false,
+o voltar não precisa ser adicionado no histórico do browser
+
+        window.onpopstate = e  => {
+            if(e.state){
+                navegarViaAjax(window.location.href, e.state.seletor, false)
+            }
+        }
+		
+		após isso, a função tratar o voltar, possui o evento onpopstate, que está retirando um estado da pilha,
+		o evento possui a propriedade state.seletor, adicionado anteriormente no click do link, com o mesmo nome.

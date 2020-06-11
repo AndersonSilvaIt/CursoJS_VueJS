@@ -1,0 +1,4 @@
+o multer é utilizado para fazer upload de arquivos
+é possível configurar a pasta que irá salvar o arquivo, assim como o nome do arquivo
+configurado em server.js
+

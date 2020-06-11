@@ -1,0 +1,19 @@
+Utilizado a biblioteca multer, para realizar upload de arquivos
+
+foi criado o arquivo package.json, para instalar as dependências, basta rodar o npm i
+
+criado o arquivo server.json
+
+const bodyParser = require('body-parser')
+const express = require('express')
+
+const app = express()
+
+app.use(express.static('.'))
+app.use(bodyParser.urlencoded({ extended : true }))
+app.use(bodyParser.json())
+
+app.get('/teste', (req, res) => res.send('ok'))
+app.listen(8080, () => console.log('Executando...')
+
+após isso, basta rodar o npm start (que é o script do package.json, para iniciar o nodemon)

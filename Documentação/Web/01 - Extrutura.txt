@@ -1,0 +1,25 @@
+Instalado o http-server para renderizar as páginas
+
+npm i -g http-server
+caso queira rodar em outra porta basta utilizar
+
+npm i -g http-server -p numeroPorta
+
+rodar o comando http-server, irá aparecer a porta que está liberado
+
+é necessário criar um arquivo index
+
+no exemplo que estou utilizando,
+toda a renderização das páginas do Link, será carregado na section da index.js,
+para isso é necessário utilizar uma requisição ajax, o script usado nesse arquivo index.html
+
+função "fetch", é uma função nova para realizar requisição ajax
+
+                fetch(link.href)
+                    .then(resp => resp.text())
+					
+				a função text() ontém o conteúdo da página, no caso a página que o link está apontando
+				
+                fetch(link.href)
+                    .then(resp => resp.text()) // aqui irá retornar o html
+                    .then(html => conteudo.innerHTML = html)				

@@ -1,0 +1,21 @@
+a tag picute, pode ser usada com vários parâmetros embutidos,
+ex: só pode ser exibido se o tamanho aplicativo tiver o tamanho minimo ou maximo de x pixels
+ex:
+
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                            media="(min-width: 600px)">
+    </picture>
+	
+	só irá aparecer essa imagem, caso o tamanh minimo do aparelho for 600 px, ex, não roda em celular
+	
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                            media="(min-width: 600px)">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+            
+    </picture>
+	
+	nesse caso, 
+	só irá aparecer essa imagem, caso o tamanh minimo do aparelho for 600 px, ex, não roda em celular
+	caso contrário, irá apareger a imagem de baixo
