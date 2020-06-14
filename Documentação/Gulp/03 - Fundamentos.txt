@@ -1,0 +1,29 @@
+O gulp é baseado em Funções (Tarefas)
+Qua automatiza o sistema
+
+ex: juntar vários arquivos JS e um único arquivo, e realizar a minificação do arquivo.sistema
+assim como retirar espaço em branco de arquivos js e css
+
+
+const gulp = require('gulp')
+
+const series = gulp.series
+//outra auternativa
+//const {series} = require('gulp')
+
+function copiar(cb){
+    
+    return cb()
+}
+
+para executar as tarefas em séries, ou seja, executar uma após a outra, é encessário utilizar o "series" do gulp
+
+por padrão, o gulp irá procurar o arquivo gulpFile, caso não encontrar esse arquivo na pasta, irá gerar um erro
+
+outro modo de rodar o gulpt é especificar a pasta gulp --gulpfile "nome da pasta"
+por padrão , o gulpt procura por uma terefa default, para executar primeiro, como no arquivo não encontra, é encessário na hora da exportação
+utilizar o "module.exports.default" = tarefa (função)
+
+ao rodar o comando "gulp", ele inicia a tarefa "Default", depois a função "copiar criado no arquivo"
+
+pasta gulp/basico arquivo gulp.js

@@ -1,0 +1,27 @@
+dentro da pasta gulp, será instalado as dependências
+
+ "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.6.1",
+    "gulp": "4.0.2",
+    "gulp-babel": "7.0.1",
+    "gulp-concat": "2.6.1",
+    "gulp-sass": "4.0.1",
+    "gulp-typescript": "4.0.2",
+    "gulp-uglify": "3.0.0",
+    "gulp-uglifycss": "1.0.9",
+    "typescript": "2.8.3"
+  }
+ arquivos que já constam no arquivo package.json
+ 
+ basta rodar o npm i, irá criar a pasta de nodule_modules com as dependências
+ caso surgir algum vilnerabilidade no terminal, basta rodar o
+ 
+ npm audit fix
+ 
+ instalado o terminal do gulp também
+ 
+ npm i -g gulp-cli
+ cli (command line interface)
+ 
+ ao rodar o gulp --version, irá apresentar a versão da cli

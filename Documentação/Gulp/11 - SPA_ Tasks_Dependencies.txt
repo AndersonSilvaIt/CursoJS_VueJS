@@ -1,0 +1,23 @@
+Configurando primeiramente o arquivo deps.js
+
+quando foi instalado as dependências do projeto, uma delas era o Font-Awesome,
+
+basta obter o caminho do arquivo na pasta node_modules
+
+return gulp.src('node_modules\font-awesome\css\font-awesome.css')
+
+function depsCSS(){
+
+    return gulp.src('node_modules\font-awesome\css\font-awesome.css')
+        .pipe(uglifycss({ "uglyComments": false}))
+        .pipe(concat('deps.min.css'))
+        .pipe(gulp.dest('build/assets/css'))
+}
+
+segunda etapa, arquivo de fontes
+
+function depsFonts(){
+    return gulp.src('node_modules\\font-awesome\\fonts\\*.*')
+        .pipe(gulp.dest('build/assets/fonts'))
+}
+

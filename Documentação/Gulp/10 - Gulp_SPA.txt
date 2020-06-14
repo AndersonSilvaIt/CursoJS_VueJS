@@ -1,0 +1,38 @@
+pasta gulp/spa, contém o package.json, primeiro passo é criar as dependências deste arquivo
+
+obs: no package.json, as dependências do gulp, é configurado somente nas dependências de Dev, pois o Dev é que irá usar o gulp,
+para gerar os arquivos minificados e etc e enviar tudo pronto para produção.
+
+npm i dentro da pasta spa
+
+como ocorreu algumas vulnerabilidades da instalação dos pacotes,
+basta rodar o comando npm audit fix para resolver
+
+criado a pasta gulpTasks, para configurar o gulp em tarefas separadas
+
+app.js = relacionados aos códigos da aplicação
+deps.js = dependências da aplicação
+servidor.js = autocatização para o dev, qualquer arquivo que for modificiado, o gulp irá trabalhar automaticamente, modificando os arquivos novamente
+
+primeiro, criação da estrutura para a SPA, criado os itens acima para dividir as funcionalidades
+
+no arquivo, gulp.js, é importado essas funcções para ai sim conifgurar de qual forma serão executados
+
+const { series, parallel } = require('gulp')
+const gulp = require('gulp')
+
+const { appHtml, appCSS, appJS, appIMG } = require('./gulpTasks/app')
+const { depsCSS, depsFonts} = require('./gulpTasks/deps')
+const { monitorarArquivos, servidor} = require('./gulpTasks/servidor')
+
+
+module.exports.default = series(
+    parallel(
+        series( appHtml, appCSS, appJS, appIMG),
+        series(depsCSS, depsFonts)
+    ),
+    servidor,
+    monitorarArquivos
+)
+
+primeiro realizao a configuração dos css, html e js, depois inicio o servidor, e por ultimo, inicio o monitoramento dos arquivos

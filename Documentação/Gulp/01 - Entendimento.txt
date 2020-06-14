@@ -1,0 +1,8 @@
+Gulp junta vários arquivos para ser enviado de uma vez só, em uma única requisição
+
+assim como minimificar os arquivos, retirar os espaços e etc.
+
+também é possível realizar a conversão de tipo de dados, exemplo liguagem TypeScript,
+é transformada em JavaScript puro
+
+também é possível monitorar alguma pasta, quando um arquivo é alterado

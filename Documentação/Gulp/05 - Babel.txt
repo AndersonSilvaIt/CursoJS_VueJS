@@ -1,0 +1,15 @@
+Babel.js
+Converte os novos códigos de JS, para o padrão mundial, para que todos os navegadores consigam rodar o JS
+
+ex: Let, é utilizado no novo Js,
+ele irá converter para "var"
+
+let variavelTeste = 'Teste de código'
+
+conversão =>
+var variavelTeste = 'Teste de código'
+
+https://babeljs.io/
+
+para testar
+

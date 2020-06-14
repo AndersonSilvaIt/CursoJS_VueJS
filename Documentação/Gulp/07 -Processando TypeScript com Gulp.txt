@@ -1,0 +1,39 @@
+Pasta gulp/typeScript
+	
+	typeScript/src
+		app.ts
+		produto.ts
+	
+	gulp.js
+	tsconfig.json
+	
+o Node não roda diretamente o typescript, é necessário realizar a conversão para o JS
+
+o typescript já contém a referência dos arquivos que serão usados, isso está no tsconfig.json
+para isso, basta usar o 
+
+const ts = require('gulp-typescript')
+const tsProject = ts.createProject('tsconfig.json')
+
+obtém a referência do TS com o gulp, depois cria um projeto referenciando os arquivos ts
+
+
+function transformacaoTS(){
+    
+    return tsProject.src()
+}
+
+usando o tsProject.src(), já irá obter todos os arquivos do tipo .ts que estão dentro de src/
+
+function transformacaoTS(){
+
+    return tsProject.src()
+        .pipe(tsProject()) // aqui ele irá combinar o ts (gulp-typescript)
+        .pipe(gulp.dest('build'))
+}
+
+module.exports.default = series(transformacaoTS)
+
+irá criar a pasta "build", com os arquivos em JS, convertidos do TS
+
+agora, ao entrar na pasta build, é possivel rodar o app.js com o node

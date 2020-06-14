@@ -1,0 +1,45 @@
+pasta gulp/javascript
+contém o arquivo gulp.js
+
+pasta src
+	src/calculadora.js
+	src/testeCalculadora.js
+	
+como o arquivo testeCalculadora.js não tem relação com calculadora.js, será gerado um erro ao tentar rodar o arquivo
+para isso, será feito a junção dos dois arquivos em um único arquivo usando o gulp
+
+	
+	gulp.src('src/**/*.js')
+	obtém todos os arquivos que estão na pasta src e que contém a extensão .js
+	
+.pipe(babel({
+           comments: false, // arquivos de comentário nao irão para o arquivo final que for gerado,
+            presets: ["env"] // ontém o javascript mais atual que existe
+        }))
+retira todos os comentário que existe no arquivo, para não subir no novo arquivo que gor gerado
+
+.pipe(uglify())
+uglify = realiza a minificação do arquivo		
+
+
+concat = depois que o arquivo for todo minimificado, sem comentários e etc, o resultado será concatenado
+o parâmetro é o nome do arquivo que será gerado
+.pipe(concat('codigo.min.js'))
+
+pasta que será salvo o arquivo gerado
+.pipe(gulp.dest('build'))
+
+
+module.exports.default = series(padrao) 
+
+ao rodar o comando gulp dentro da pasta javascript, que já contem o arquivo gulp.js com as confogirações necessárias, será criado
+a pasta build, com o arquivo codigo.min.js dentro dela
+
+dentro do worlflow dos pipe, é possível tratar um evento de erro ex:
+
+        .pipe(uglify())
+        .on('error', err => console.log(err))
+        .pipe(concat('codigo.min.js'))
+
+
+ 

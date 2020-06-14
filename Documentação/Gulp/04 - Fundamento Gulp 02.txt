@@ -1,0 +1,57 @@
+para entender melhor, como as funções são geradas em série,
+foram adicionados novas funções
+
+antes1, antes2 e fim
+
+module.exports.default = series(
+    antes1,
+    antes2,
+    copiar,
+    fim )
+	
+e quando for exportar, basta informar em sequência
+
+
+para executar em paralelo, basta importar o "paralel" do gulp
+ fun
+module.exports.default = series(
+    parallel( antes1, antes2),
+    copiar,
+    fim )
+	
+apenas quando terminar  de executar o antes é que irá para a próxma função, pos totods estão dentro de "series"
+
+
+para copiar um arquivo para outro local
+
+gulp.src('Arquivos') = quais arquivos serão usados para realizar alguma tarefa
+
+função pipe() = função para modificar os os arquivos que foram selecionados
+exemplo:
+
+    gulp.src(['pastaA/arquivo1.txt', 'pastaA/arquivo2.txt'])
+        .pipe(imagemPelaMetade())
+        .pipe(imagemEmPretoEBranco())
+        .pipe(transformacaoA())
+        .pipe(transformacaoB())
+		
+Obtem os arquivos arquivo1.txt e aplica as transformações, cada uma em uma função
+gulp.dest('LocalSalvar') = função para salvar o arquivo gerado
+
+
+function copiar(cb){
+    
+    gulp.src(['pastaA/arquivo1.txt', 'pastaA/arquivo2.txt'])
+        //.pipe(imagemPelaMetade())
+        //.pipe(imagemEmPretoEBranco())
+        //.pipe(transformacaoA())
+        //.pipe(transformacaoB())
+          .pipe(gulp.dest('pastaB'))
+
+    return cb()
+}
+ao rodar o gulp, será criado a pastaB, com os arquivos 'pastaA/arquivo1.txt', 'pastaA/arquivo2.txt' dentro dela
+
+outra forma de pegar vários arquivos é utilizando uma expressão
+gulp.src('pastaA/**/*.txt')
+qualquer arquivo dentro da pastaA e que tenha a extensão .txt

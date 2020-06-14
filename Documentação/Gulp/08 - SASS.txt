@@ -1,0 +1,32 @@
+Compilador Framework  => CSS
+
+pasta css/src
+	contém arquivos sass,
+	uma página html e o próprio gulp.js
+	
+	no arquivo html, contém uma referência para css/estilo.min.css
+	esse arquivo não existe ainda, será gerado a partir dos arquivos sass, que serão concatenados e minificados com
+	o gulp e uglify
+	
+	arquivos necessários
+	
+const { series } = require('gulp')
+const gulp =  require('gulp')
+const sass =  require('gulp-sass')
+const uglifyss = require('gulp-uglifycss')
+const concat = require('gulp-concat')
+
+na função gulp.src(''), será apontado somente um arquivo sass, o index.sass, visto que ele já realiza o import de todos os outros arquivos
+
+    return gulp.src('src/saas/index.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe()
+
+a função sass(), já converter o arquivo todo para css puro
+
+return gulp.src('src/saas/index.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(uglifyss({"uglyComments": true0}))
+        .pipe(concat('estilo.min.css'))
+        .pipe(gulp.dest('build/css'))
+o uglify realiza a minificação dos arquivos		
