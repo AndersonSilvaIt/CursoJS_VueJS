@@ -1,0 +1,74 @@
+criado a pasta webpack na raiz do projeto
+
+dentro da pasta, criado o arquivo package.json (npm init -y)
+
+{
+  "name": "capitulo-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "4.8.1",
+    "webpack-cli": "2.1.3"
+  }
+}
+
+alterado o arquivo package.json, para instalar as dependências iniciais do projeto
+
+npm i = instala as dependências
+
+arquivo Pessoa.js
+//export default class Pessoa{
+//    cumprimentar(){
+//        return 'Bom dia!'
+//    }
+//}
+
+esse código, o node não reconhece, o sistema de módulo, é necessário utilizar o padrão 
+
+module.exports = class Pessoa{
+    cumprimentar(){
+        return 'Bom dia!'
+    }
+}
+
+
+o mesmo ocorre no arquivo Principal.js
+desse modo não funciona
+//import Pessoa from './pessoa'
+
+const atendente = new Pessoa
+console.log(atendente.cumprimentar())
+
+é necessário utilizar o require()
+const Pessoa = require('./pessoa')
+//import Pessoa from './pessoa'
+
+const atendente = new Pessoa
+console.log(atendente.cumprimentar())
+
+
+para utilizar esses recursos,
+foi criado o arquivo webpack.config.js
+
+realizo a importação do webPack
+const webpack = require('webpack')
+
+// aqui realizo a configuração, aqui estou apontando para o arquivo que criei, principal .js
+module.exports = {
+    mode: 'development',
+    entry: './src/principal.js'
+}
+
+ao rodar o npm "start", configurado no package.json, ele irá iniciar esse arquivo webpack
+irá criar uma pasta "dist" com um arquivo main.js
+
+
+ao rodar o comando npm start && node dist/main.js
+será impresso o Bom Dia na tela

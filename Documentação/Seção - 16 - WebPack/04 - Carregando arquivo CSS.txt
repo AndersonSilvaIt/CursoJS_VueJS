@@ -1,0 +1,40 @@
+criado a pasta em src
+	assets/css
+		arquivo: estilo.css
+
+dentro de principal.js
+foi importado esse arquivo css
+
+ao rodar o npm start && node public/principal.js
+apresentou um erro na tela, não conseguiu fazer o load do css
+
+para resolver isso, é necessário adicionar uma configuração do webpack
+
+module.exports = {
+    mode: 'development',
+    entry: './src/principal.js',
+    output: {
+        filename: 'principal.js',
+        path: __dirname + '/public'
+    },
+    module: {
+        rules: [{
+            test: /\.css$/,
+            use: [
+                'style-loader', // Adiciona CSS a DOM injetandoa tag <style>
+                'css-loader' // interpreta @import, url()...
+            ]
+        }]
+    }
+}
+
+porém ainda é apresentado um erro ao rodar o script,
+para isso, no package.json é adicionado duas novas dependências para os css
+
+  "devDependencies": {
+    "css-loader": "0.28.11",
+    "style-loader": "0.21.0",
+    "webpack": "4.8.1",
+    "webpack-cli": "2.1.3"
+  }
+  rodar o comando npm i para instalar tais dependências

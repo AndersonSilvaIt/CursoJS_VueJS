@@ -1,0 +1,27 @@
+no arquivo de configuração, foi adicionado o local de saída
+
+module.exports = {
+    mode: 'development',
+    entry: './src/principal.js',
+    output: {
+        filename: 'principal.js'
+    }
+}
+
+na pasta dist:
+	será criado o arquivo principal.js
+	
+quand utilizo o parametro "path",
+os arquivos serão gerados todos dentro da pasta apontada agora "public", e não será criado mais ou "dist"
+
+module.exports = {
+    mode: 'development',
+    entry: './src/principal.js',
+    output: {
+        filename: 'principal.js',
+        path: __dirname + '/public'
+    }
+}
+
+ao rodar o node public/principal.js
+será apresentado a mensagem na tela "Bom dia"

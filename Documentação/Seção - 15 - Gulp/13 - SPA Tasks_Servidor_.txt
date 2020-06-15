@@ -1,0 +1,43 @@
+arquivo servidor.js
+
+primeiro, configurado o servidor
+
+function servidor(){
+
+    return gulp.src('build')
+        .pipe(webServer({
+            port:8080,
+            open: true,
+            livereload: true
+        }))
+}
+
+o arquivo irá ler a pasta build, procurar por algum arquivo index.html,
+a opção open: true, ao rodar o comando gulp no terminal, irá abrir o browser na porta 8080
+
+
+IMPORTANTE
+
+
+const watch = require('gulp-watch')
+
+o watch irá ficar monitorando a aplicação, caso houver alguma alteração no código fonte, será atualizado também no build da alicação,
+obs:
+ qualquer alteração, não pode ser feito nos arquivos da pasta build, somente no código fonte,
+ a pasta build os arquivos são gerados automaticamente com o gulp
+ 
+function monitorarArquivos(cb){ 
+
+    watch('src/**/*.html', () => { gulp.series('appHtml')()})
+    return cb()
+}
+
+nesse caso, o watch irá monitorar os arquivos html, caso houver alguma alteração, será chamado somente a task que modifica o html no build, 
+gulp.series('appHtml')()
+basta apontar a função que faz isso, somente pelo nome
+
+ao rodar o gulp novamente, gerou um erro, como "task desconhecida",
+para resolver esse problema, aonde está exportando essa função, foi implementado o seguinte código,
+no caso, no arquivo app.js
+
+gulp.task('appHtml', appHtml)
